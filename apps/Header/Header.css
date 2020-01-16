@@ -1,0 +1,41 @@
+#Header {
+    padding: 4rem 8rem 1rem 8rem;
+    font-size: 2rem;
+}
+
+#Header .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Header .top a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#Header nav {
+    display: flex;
+    align-items: center;
+}
+
+#Header nav ul {
+    list-style: none;
+    margin: 0 0 0 16rem;
+    padding: 0;
+    display: flex;
+}
+
+#Header nav ul li {
+    border-left: 0.139vw solid transparent;
+    padding-left: 0.694vw;
+    margin-right: 4rem;
+}
+
+#Header nav ul li:hover {
+    border-left: 0.139vw solid rgb(255, 96, 61);
+}
+
+#Header nav ul li.active a {
+    color: rgb(255, 96, 61);
+}

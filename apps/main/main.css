@@ -1,0 +1,326 @@
+@import "../header/header.css";
+@import "../../apps/footer/footer.css";
+@import "../../apps/KeyGen/KeyGen.css";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 0.684vw;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #e0e0e0;
+    background-color: #545454;
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+input {
+    outline: 1px solid transparent;
+}
+
+.hover {
+    border-left: 0.139vw solid transparent !important;
+}
+
+.hover:hover {
+    border-left: 0.139vw solid #ff603d !important;
+}
+
+.focus {
+    outline: 1px solid transparent;
+}
+
+.focus:focus {
+    outline: 1px dashed #ff603d;
+}
+
+.focus.without-border:focus {
+    border: none;
+    color: #00BFFF;
+}
+
+.transition {
+    transition: all 1s ease 0s;
+}
+
+#Auth {
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: 100%;
+    height: 100%;
+}
+
+#Center {
+    overflow: hidden;
+    padding: 2rem 0 2rem 0;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    word-wrap: break-word;
+    font-size: 2.571rem;
+    margin: 0;
+    font-weight: bold;
+    color: rgba(0,0,0,0.7);
+}
+
+h3 {
+    word-wrap: break-word;
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    font-weight: bold;
+    color: rgba(0,0,0,0.7);
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+.panel-button {
+    border: none;
+    font-size: inherit;
+    text-align: left;
+    color: #e0e0e0;
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0 1rem 0 1rem;
+}
+
+.error {
+    color: #ff603d;
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.submit {
+    border-radius: 0.139vw;
+    border: solid 0.069vw #ff603d;
+    padding:1rem 1rem;
+    display: block;
+    font-size: 1.389vw;
+    font-weight: 300;
+    text-align: center;
+    color: #ff603d;
+    background: none;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: rgba(255, 96, 61, 0.3);
+}
+
+.submit.blue {
+    color: #7b68ee;
+    border: solid 0.069vw #7b68ee;
+}
+
+.submit.blue:hover {
+    background-color: rgba(123, 104, 238, 0.3);
+}
+
+.submit.green {
+    color: #32cd32;
+    border: solid 0.069vw #32cd32;
+}
+
+.submit.green:hover {
+    background-color: rgba(50, 205, 50, 0.3);
+}
+
+.submit.white:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.submit[disabled] {
+    border: solid 0.069vw #ccc;
+    color: #ccc;
+    cursor: default;
+}
+
+.submit[disabled]:hover {
+    background-color: transparent;
+}
+
+.submit.white {
+    color: white;
+    border: 1px solid white;
+}
+
+.message {
+    color: forestgreen;
+    font-size: 1.2rem;
+}
+
+.message.show {
+    display: block;
+}
+
+.orange {
+    color: #ff603d;
+}
+
+.green {
+    color: #228b22;
+}
+
+.hide {
+    display: none;
+}
+
+button[disabled] {
+    color: #ccc !important;
+}
+
+button[disabled]:hover {
+    background-color: transparent;
+    text-decoration: none !important;
+}
+
+.transition {
+    transition: all 1s ease 0s
+}
+
+dialog {
+    position: fixed;
+    top: 8vw;
+    width: 34.722vw;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 0.139vw;
+    box-sizing: border-box;
+    padding: 2.083vw 3.472vw;
+    border: none;
+    font-size: 1rem;
+}
+
+dialog::backdrop {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+dialog .close {
+    position: absolute;
+    right: -2.5vw;
+    top: -2.5vw;
+    border-radius: 50%;
+    display: block;
+    padding: 0;
+    color: #e0e0e0;
+    width: 2.5vw;
+    height: 2.5vw;
+    background: url(../auth/images/close.svg);
+    background-size: 100% 100%;
+    border: none;
+}
+
+dialog .close:hover {
+    background-color: rgba(84, 84, 84, 0.3);
+}
+
+dialog label {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+dialog label:first-child {
+    margin-top: 0;
+}
+
+dialog input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 0.694vw 0;
+    padding: 0.694vw 0;
+    font-size: 0.972vw;
+    font-weight: 300;
+    text-align: left;
+    color: #545454;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 0.069vw solid #545454;
+}
+
+dialog input[type="checkbox"] {
+    display: inline;
+    width: auto;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+
+.middle {
+    vertical-align: middle;
+    font-size: 1.3rem;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.tabs {
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+.tabs .tab {
+    border: none;
+    background-color: inherit;
+    display: block;
+    font-size: 1.389vw;
+    font-weight: 300;
+    text-align: center;
+    color: inherit;
+    border-bottom: 0.069vw solid transparent;
+    margin: 0 0.5rem 0.5rem 1px;
+}
+
+.tabs .tab:nth-last-child(2) {
+    margin-right: 0;
+}
+
+.tabs .tab.new {
+    color: #ff603d;
+    display: block;
+    padding: 0 0.7rem 0 0.7rem;
+    border: 1px solid transparent;
+}
+
+.tabs .tab.new:hover {
+    border: 1px solid #ff603d;
+}
+
+
+.tabs .tab.active {
+    border-bottom: 0.069vw solid #ff603d;
+    color: #ff603d;
+}

@@ -1,0 +1,57 @@
+.KeyGen {
+    margin: 0 8rem;
+    height: 100%;
+    display: flex;
+    color: #545454;
+    justify-content: center;
+    align-items: center;
+}
+
+.KeyGen .config {
+    width: 40%;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 0.139vw 0.278vw 0 rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.KeyGen p {
+    text-align: justify;
+    margin: 0 0 1rem 0;
+    padding: 0;
+}
+
+.KeyGen .config .line {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.KeyGen .config .line.id {
+    margin: 0 0 1rem 0;
+}
+
+.KeyGen .config .line.info {
+    flex-direction: column;
+    margin: 0 0 2rem 0;
+}
+
+.KeyGen textarea {
+    height: 8rem;
+    display: block;
+}
+
+.KeyGen .download {
+    margin-top: 0;
+}
+
+.KeyGen .load {
+    margin-bottom: 1rem;
+}
+
+.KeyGen .title {
+    font-weight: bold;
+}
