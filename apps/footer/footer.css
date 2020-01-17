@@ -19,7 +19,11 @@ footer .copyrights .item a {
 }
 
 footer .copyrights .item {
-    margin-left: 4rem;
+    margin-left: 16rem;
+}
+
+footer .copyrights .item:first-child {
+    margin-left: 0;
 }
 
 footer .copyrights .item.back a {
