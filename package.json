@@ -1,0 +1,30 @@
+{
+  "name": "auth-frontend",
+  "version": "1.0.0",
+  "description": "Frontend part of node auth module",
+  "main": "index.html",
+  "dependencies": {
+    "async-content-loader": "^1.0.1",
+    "es-class-router": "^1.0.2",
+    "cross-uuid": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MillerRabin/auth-frontend.git"
+  },
+  "keywords": [
+    "intention-network",
+    "auth",
+    "browser"
+  ],
+  "author": "millerrabin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MillerRabin/auth-frontend/issues"
+  },
+  "homepage": "https://github.com/MillerRabin/auth-frontend#readme"
+}
