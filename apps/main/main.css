@@ -324,3 +324,7 @@ dialog input[type="checkbox"] {
     border-bottom: 0.069vw solid #ff603d;
     color: #ff603d;
 }
+
+input[type="file"] {
+    display: none;
+}

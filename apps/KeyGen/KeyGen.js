@@ -29,17 +29,53 @@ async function download(keygen) {
 
 function getObject(text) {
     if (safe.isEmpty(text)) return {};
-    const obj = `{\n${text}\n}`;
+    const nText = text.split('\n').join(',\n');
+    const obj = `{\n${nText}\n}`;
     return JSON.parse(obj);
+}
+
+function readFile(file) {
+    return new Promise((resolve, reject) => {
+        const fr = new FileReader();
+        fr.readAsText(file, 'utf-8');
+        fr.onloadend = function (event) {
+            return resolve(event.currentTarget.result);
+        };
+        fr.onerror = function (event) {
+            return reject(event);
+        };
+        fr.onabort = function (event) {
+            return reject(event);
+        };
+    });
+}
+
+async function readConfig(keygen, file) {
+    try {
+        const text = await readFile(file);
+        keygen.configuration = JSON.parse(text);
+    } catch (e) {
+        keygen.error = e;
+    }
 }
 
 async function render(keygen) {
     const template = await gTemplateP;
     keygen.mount.innerHTML = template.text;
-    keygen.id = UUID.generate();
+    keygen.id = keygen.configuration.id;
     keygen.download.onclick = function () {
+        keygen.error = null;
         download(keygen);
-    }
+    };
+    const fileInput = keygen.mount.querySelector('.submitFile');
+    keygen.load.onclick = function () {
+        keygen.error = null;
+        fileInput.click();
+    };
+    fileInput.onchange = function () {
+        const file = fileInput.files[0];
+        readConfig(keygen, file);
+    };
 }
 
 function assign(object, field, selector) {
@@ -47,6 +83,15 @@ function assign(object, field, selector) {
     if (object[key] == null)
         object[key] = object.mount.querySelector(selector);
     return object[key];
+}
+
+function loadData(obj) {
+    const res = [];
+    for (const key in obj) {
+        if (!obj.hasOwnProperty(key)) continue;
+        res.push(`"${key}": "${obj[key]}"`);
+    }
+    return res.join('\n');
 }
 
 export default class KeyGen {
@@ -59,6 +104,19 @@ export default class KeyGen {
         return this._mount;
     }
 
+    get configuration() {
+        if (this._configuration == null)
+            this._configuration = {
+                id: UUID.generate()
+            };
+        return this._configuration;
+    }
+
+    set configuration(value) {
+        this._configuration = value;
+        this.id = value.id;
+        this.text = loadData(value.data);
+    }
 
     get id() {
         return assign(this, 'id', '.line.id .value').innerHTML;
@@ -78,6 +136,10 @@ export default class KeyGen {
 
     get download() {
         return assign(this, 'download', '.submit.download');
+    }
+
+    get load() {
+        return assign(this, 'load', '.submit.load');
     }
 
     get data() {

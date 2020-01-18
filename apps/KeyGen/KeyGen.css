@@ -17,6 +17,7 @@
     padding: 2rem;
     max-height: 100%;
     overflow: hidden;
+    justify-content: space-between;
 }
 
 .KeyGen p {
