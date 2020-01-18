@@ -4,9 +4,10 @@
   "description": "Frontend part of node auth module",
   "main": "index.html",
   "dependencies": {
-    "async-content-loader": "^1.0.1",
+    "async-content-loader": "^1.0.5",
+    "cross-uuid": "^1.0.0",
     "es-class-router": "^1.0.2",
-    "cross-uuid": "^1.0.0"
+    "safe-ops": "^1.0.1"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,15 +1,15 @@
 <div class="KeyGen">
     <div class="config">
         <p>
-            You can generate certificate to use in Intention Network authentication.
-            It contains a private key, public key and your user data cyphered with private key.
+            You can generate certificate to use in Intention Network authentication.<br/>
+            It contains a private key, public key and your user data cyphered with private key.<br/>
             Your user data can be decyphered using public key.
         </p>
         <p>The service do not store any user data</p>
         <p>
             If you want to edit your authentication configuration, load it here.
         </p>
-        <button class="submit load">Load configuration</button>
+        <button class="submit blue load">Load configuration</button>
         <p>
             Your unique id. It always will be saved in your certificate and can be used for
             authorization purposes
@@ -19,17 +19,20 @@
             <span class="value id"></span>
         </div>
         <p>
-            You can specify any data here in <b>key: value</b> format.
-            It will be included in your certificate
+            You can specify any data here in <b>"key": "value"</b> format.
+            It will be included in your certificate.<br/>
+            Every key and value, except numbers and booleans must be in quotes (")
         </p>
         <label class="line info">
             <span class="title">Additional data</span>
-            <textarea class="data"></textarea>
+            <textarea class="value"></textarea>
+            <span class="error"></span>
         </label>
         <p>
             The downloaded data will be a zip archive with private key, public key, certificate
-            and configuration. Use that configuration if you want to edit your data later
+            and configuration. <br/>
+            Use that configuration if you want to edit your data later
         </p>
-        <button class="submit blue download">Download configuration</button>
+        <button class="submit download">Create configuration</button>
     </div>
 </div>

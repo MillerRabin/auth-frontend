@@ -8,7 +8,6 @@
 }
 
 .KeyGen .config {
-    width: 40%;
     min-width: 600px;
     border-radius: 6px;
     background-color: white;
@@ -46,6 +45,10 @@
 
 .KeyGen .config .line.id .value {
     color: #999999;
+}
+
+.KeyGen .config .line.info .value {
+    margin: 0;
 }
 
 .KeyGen .config .line.info {
